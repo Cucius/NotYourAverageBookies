@@ -24,5 +24,11 @@ VALUES
 ('The Seven Deaths of Evelyn Hardcastle','Stuart','Turton', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Seven_Deaths.jpg') ),
 ('Lost in Time','A. G.','Riddle', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Lost_in_Time.jpg') ),
 ('All Systems Red','Martha','Wells', 'sci-fi', LOAD_FILE('./public/images/sci-fi/All_Systems.jpg') ),
-('Artificial Condition','Martha','Wells', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Artificial.jpg') );
+('Artificial Condition','Martha','Wells', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Artificial.jpg') ),
+--Travel 
+('A Grimm Sacrifice','Jeffery H.','Haskell', 'travel', LOAD_FILE('./public/images/travel/Grimm.jpg') ),
+('The Seven Deaths of Evelyn Hardcastle','Stuart','Turton', 'travel', LOAD_FILE('./public/images/travel/Seven_Deaths.jpg') ),
+('Lost in Time','A. G.','Riddle', 'travel', LOAD_FILE('./public/images/travel/Lost_in_Time.jpg') ),
+('All Systems Red','Martha','Wells', 'travel', LOAD_FILE('./public/images/travel/All_Systems.jpg') ),
+('Artificial Condition','Martha','Wells', 'travel', LOAD_FILE('./public/images/travel/Artificial.jpg') );
 
