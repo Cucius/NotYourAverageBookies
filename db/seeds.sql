@@ -18,5 +18,11 @@ VALUES
 ('One By One','Freida','McFadden', 'horror', LOAD_FILE('./public/images/horror/One_by_one.jpg') ),
 ('Nettle & Bone','T.','Kingfisher', 'horror', LOAD_FILE('./public/images/horror/Nettle_Bone.jpg') ),
 ('The Last Graduate','Naomi','Novik', 'horror', LOAD_FILE('./public/images/horror/Graduate.jpg') ),
-('The Hive','Gregg','Olsen', 'horror', LOAD_FILE('./public/images/horror/Hive.jpg') );
+('The Hive','Gregg','Olsen', 'horror', LOAD_FILE('./public/images/horror/Hive.jpg') ),
+--Sci-Fi 
+('A Grimm Sacrifice','Jeffery H.','Haskell', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Grimm.jpg') ),
+('The Seven Deaths of Evelyn Hardcastle','Stuart','Turton', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Seven_Deaths.jpg') ),
+('Lost in Time','A. G.','Riddle', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Lost_in_Time.jpg') ),
+('All Systems Red','Martha','Wells', 'sci-fi', LOAD_FILE('./public/images/sci-fi/All_Systems.jpg') ),
+('Artificial Condition','Martha','Wells', 'sci-fi', LOAD_FILE('./public/images/sci-fi/Artificial.jpg') );
 
