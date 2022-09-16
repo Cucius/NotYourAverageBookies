@@ -1,12 +1,12 @@
-const router = require('express').Router();
-const randomizer = require('../utils/helpers');
-// We will need the models eventually 
-const { Book } = require('../models/');
+const router = require("express").Router();
+const randomizer = require("../utils/helpers");
+// We will need the models eventually
+const { Book } = require("../models/");
 
 // Get home page - main layout
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    console.log('Called route')
+    console.log("Called route");
     const bookData = await Book.findAll();
     // Serialize data so we can pass it to handle bars
     // console.log(bookData)
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     // console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // TODO: Pass randomBooks to handlebars
-    res.render('homepage');
+    res.render("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,7 +39,7 @@ router.get("/:genre", async (req, res) => {
     // Serialize data so we can pass it to handle bars
     // TODO: pass oject to handlebars so we can render books by genre
     // res.status(200).json(randomBooks);
-    res.render('cards', randomBooks)
+    res.render("homepage", randomBooks);
   } catch (err) {
     res.status(500).json(err);
   }
