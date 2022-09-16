@@ -1,34 +1,45 @@
-const router = require("express").Router();
-// We will need the models eventually
-const { Book } = require("../models/");
+const router = require('express').Router();
+const randomizer = require('../utils/helpers');
+// We will need the models eventually 
+const { Book } = require('../models/');
 
 // Get home page - main layout
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
+    console.log('Called route')
     const bookData = await Book.findAll();
-    // res.status(200).json(bookData);
-    res.render("homepage");
-    // Need a helper funciton to randomize the first 3 books the user will see
-
     // Serialize data so we can pass it to handle bars
-    // const book = bookData.map((book) => book.get({plain:true}));
-    // res.render('main', { book }) // Placeholder for now, this will render the correct html handlebar page
+    // console.log(bookData)
+    const book = bookData.map((book) => book.get({ plain: true }));
+    // Need a helper function to randomize the first 3 books the user will see
+    const randomBooks = randomizer(book);
+    // This if for testing
+    // console.log(randomBooks);
+    // res.status(200).json(randomBooks);
+    // TODO: Pass randomBooks to handlebars
+    res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Get page by genre
-router.get("/:id", async (req, res) => {
+router.get("/:genre", async (req, res) => {
   try {
-    console.log(req.params.id);
+    console.log(req.params.genre);
     const bookData = await Book.findAll({
-      where: { genre: req.params.id },
+      where: { genre: req.params.genre },
     });
-    res.status(200).json(bookData);
+
+    const book = bookData.map((book) => book.get({ plain: true }));
+    const randomBooks = randomizer(book);
+    // This if for testing
+    // console.log(randomBooks);
+    // res.status(200).json(randomBooks);
     // Serialize data so we can pass it to handle bars
-    // const book = bookData.map((book) => book.get({plain:true}));
-    // res.render('placehodler', {book})
+    // TODO: pass oject to handlebars so we can render books by genre
+    // res.status(200).json(randomBooks);
+    res.render('cards', randomBooks)
   } catch (err) {
     res.status(500).json(err);
   }
