@@ -5,22 +5,22 @@ const { Book } = require('../models/');
 
 // Get home page - main layout
 router.get('/', async (req, res) => {
-    try{
-        console.log('Called route')
-        const bookData = await Book.findAll();
-        // Serialize data so we can pass it to handle bars
-        // console.log(bookData)
-        const book = bookData.map((book) => book.get({plain:true}));
-        // Need a helper function to randomize the first 3 books the user will see
-        const randomBooks = randomizer(book);
-        // This if for testing
-        // console.log(randomBooks);
-        // res.status(200).json(randomBooks);
-        // TODO: Pass randomBooks to handlebars
-        res.render('homepage'); 
-    } catch (err){
-        res.status(500).json(err);
-    }
+  try {
+    console.log('Called route')
+    const bookData = await Book.findAll();
+    // Serialize data so we can pass it to handle bars
+    // console.log(bookData)
+    const book = bookData.map((book) => book.get({ plain: true }));
+    // Need a helper function to randomize the first 3 books the user will see
+    const randomBooks = randomizer(book);
+    // This if for testing
+    // console.log(randomBooks);
+    // res.status(200).json(randomBooks);
+    // TODO: Pass randomBooks to handlebars
+    res.render('homepage');
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // Get page by genre
@@ -31,15 +31,15 @@ router.get("/:genre", async (req, res) => {
       where: { genre: req.params.genre },
     });
 
-    const book = bookData.map((book) => book.get({plain:true}));
+    const book = bookData.map((book) => book.get({ plain: true }));
     const randomBooks = randomizer(book);
     // This if for testing
     // console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // Serialize data so we can pass it to handle bars
     // TODO: pass oject to handlebars so we can render books by genre
-    res.status(200).json(randomBooks);
-    // res.render('placehodler')
+    // res.status(200).json(randomBooks);
+    res.render('cards', randomBooks)
   } catch (err) {
     res.status(500).json(err);
   }
