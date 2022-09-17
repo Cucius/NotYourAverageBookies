@@ -14,10 +14,12 @@ router.get("/", async (req, res) => {
     // Need a helper function to randomize the first 3 books the user will see
     const randomBooks = randomizer(book);
     // This if for testing
-    // console.log(randomBooks);
+    console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // TODO: Pass randomBooks to handlebars
+
     res.render("homepage", {randomBooks});
+
   } catch (err) {
     res.status(500).json(err);
   }
