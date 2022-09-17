@@ -17,7 +17,9 @@ router.get("/", async (req, res) => {
     console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // TODO: Pass randomBooks to handlebars
-    res.render("homepage", { randomBooks });
+
+    res.render("homepage", {randomBooks});
+
   } catch (err) {
     res.status(500).json(err);
   }
