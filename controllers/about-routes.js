@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 // Get home page - main layout
-router.get('/about', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
-        res.render('homepage') // Placeholder for now, this will render the correct html handlebar page
+        res.render('aboutpage'); 
     } catch (err){
         res.status(500).json(err);
     }

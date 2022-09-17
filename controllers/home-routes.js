@@ -17,14 +17,14 @@ router.get("/", async (req, res) => {
     // console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // TODO: Pass randomBooks to handlebars
-    res.render("homepage");
+    res.render("homepage", {randomBooks});
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Get page by genre
-router.get("/:genre", async (req, res) => {
+router.get("/post/:genre", async (req, res) => {
   try {
     console.log(req.params.genre);
     const bookData = await Book.findAll({
@@ -34,12 +34,11 @@ router.get("/:genre", async (req, res) => {
     const book = bookData.map((book) => book.get({ plain: true }));
     const randomBooks = randomizer(book);
     // This if for testing
-    // console.log(randomBooks);
+    console.log(randomBooks);
     // res.status(200).json(randomBooks);
     // Serialize data so we can pass it to handle bars
     // TODO: pass oject to handlebars so we can render books by genre
-    // res.status(200).json(randomBooks);
-    res.render("homepage", randomBooks);
+    res.render("homepage", {randomBooks});
   } catch (err) {
     res.status(500).json(err);
   }
