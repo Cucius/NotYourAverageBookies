@@ -4,20 +4,19 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
 
-<h2>"The Bookies" Recommendations:</h2>
+<h2>"The Bookies" Recommendations:</h2> 
   <div class="container books">
     <div class="row">
       <div class="col-8">
         <div class="card mb-3" style="width: 100%">
           <div class="row g-md-8">
             <div class="col-6 col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
+              <img src="../images/{{$randomBooks.[0].genre}}{{randomBooks.[0].coverIMG}}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Finding Me</h5>
-                <p class="card-text">Description:</p>
-                <p class="card-text">Author: Viola Davis</p>
+                <h5 class="card-title">{{randomBooks.[0].title}}</h5>
+                <p class="card-text">Author: {{randomBooks.[0].authorFirstName}} {{randomBooks.[0].authorLastName}}</p>
                 <a class="btn btn-primary float-sm-end btn-outline-light btn-sm"><small
                     class="text-white float-sm-end">add
                     to myBookies</small></a>
@@ -30,13 +29,13 @@
         <div class="row">
           <div class=" col-12">
             <div class="card" style="width: 100%">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="/.../images/{{randomBooks.[0].genre}}and{{randomBooks.[0].coverIMG}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Green Lights</h5>
+                <h5 class="card-title">{{randomBooks.[1].title}}</h5>
                 <p class="card-text">Description:</p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Author:</li>
+                <li class="list-group-item"> Author: {{randomBooks.[1].authorFirstName}} {{randomBooks.[1].authorLastName}}</li>
               </ul>
               <div class="card-footer">
                 <a class="btn btn-primary float-sm-end btn-outline-light btn-sm"><small
@@ -48,19 +47,17 @@
         </div>
         <div class="col-12">
           <div class="card" style="width: 100%">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="../images/{randomBooks.[2].genre}{randomBooks.[2].coverIMG}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Green Lights</h5>
-              <p class="card-text">Description</p>
+              <h5 class="card-title">{{randomBooks.[2].title}}</h5>
+              <p class="card-text  ">Description</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Author:</li>
+              <li class="list-group-item"> Author: {{randomBooks.[2].authorFirstName}} {{randomBooks.[2].authorLastName}}</li>
             </ul>
             <div class="card-footer">
               <a class="btn btn-primary float-sm-end btn-outline-light btn-sm"><small
-                  class="text-white float-sm-end">add
-                  to
-                  myBookies</small></a>
+                  class="text-white float-sm-end">add to myBookies</small></a>
             </div>
           </div>
         </div>
