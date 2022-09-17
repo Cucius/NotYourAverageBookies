@@ -9,12 +9,7 @@ function randomizer(data){
             }
             randomBooks.push(data[arrayIndex]);
             lastIndex = arrayIndex;
-            // if (arrayIndex === lastIndex){
-            //     arrayIndex = Math.floor(Math.random()*data.length);
-            // } else {
-            //     randomBooks.push(data[arrayIndex]);
-            //     lastIndex = arrayIndex;
-            // }
+
         };
     // console.log(randomBooks)    
     return randomBooks;    
