@@ -63,8 +63,12 @@ img {
   width: 100%;
 }
 
+h2 {
+  color: #EBF4F7;
+}
 .card {
-  border: 15px solid black;
+  border: 15px solid #D2D9DD;
+  background-color: #EBF4F7;
 }
 footer {
   flex-shrink: 0;
