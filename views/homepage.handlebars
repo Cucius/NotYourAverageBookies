@@ -11,12 +11,12 @@
         <div class="card mb-3" style="width: 100%">
           <div class="row g-md-8">
             <div class="col-6 col-md-4">
-              <img src="/../images/{{$randomBooks.[0].genre}}{{randomBooks.[0].coverIMG}}" class="img-fluid rounded-start" alt="...">
+            <img src="images/{{randomBooks.[0].genre}}/{{randomBooks.[0].coverIMG}}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">{{randomBooks.[0].title}}</h5>
-                <p class="card-text">Author: {{randomBooks.[0].authorFirstName}} {{randomBooks.[0].authorLastName}}</p>
+                <h5 class="card-title"><i>{{randomBooks.[0].title}}</i>
+                <p class="card-text"><i>by {{randomBooks.[0].authorFirstName}} {{randomBooks.[0].authorLastName}}</p></i>
                 <a class="btn btn-primary btn-outline-light btn-sm"><small
                     class="text-white">add
                     to myBookies</small></a>
@@ -29,12 +29,12 @@
         <div class="row">
           <div class=" col-12">
             <div class="card" style="width: 100%">
-              <img src="/.../images/{{randomBooks.[1].genre}}{{randomBooks.[1].coverIMG}}" class="card-img-top" alt="...">
+            <img src="images/{{randomBooks.[1].genre}}/{{randomBooks.[1].coverIMG}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">{{randomBooks.[1].title}}</h5>
+                <h5 class="card-title "><i>{{randomBooks.[1].title}}</h5></i>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Author: {{randomBooks.[1].authorFirstName}} {{randomBooks.[1].authorLastName}}</li>
+                <li class="list-group-item"><i>by {{randomBooks.[1].authorFirstName}} {{randomBooks.[1].authorLastName}}</li></i>
               </ul>
               <div class="card-footer">
                 <a class="btn btn-primary btn-outline-light btn-sm"><small
@@ -46,12 +46,12 @@
         </div>
         <div class="col-12">
           <div class="card" style="width: 100%">
-            <img src="/.../images/{{randomBooks.[2].genre}}{{randomBooks.[2].coverIMG}}" class="card-img-top" alt="...">
+            <img src="images/{{randomBooks.[2].genre}}/{{randomBooks.[2].coverIMG}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{randomBooks.[2].title}}</h5>
+              <h5 class="card-title"><i>{{randomBooks.[2].title}}</h5></i>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> Author: {{randomBooks.[2].authorFirstName}} {{randomBooks.[2].authorLastName}}</li>
+              <li class="list-group-item"><i>by {{randomBooks.[2].authorFirstName}} {{randomBooks.[2].authorLastName}}</li></i>
             </ul>
             <div class="card-footer">
               <a class="btn btn-primary btn-outline-light btn-sm"><small
