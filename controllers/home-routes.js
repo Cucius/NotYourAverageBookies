@@ -9,12 +9,11 @@ router.get("/", async (req, res) => {
     console.log("Called route");
     const bookData = await Book.findAll();
     // Serialize data so we can pass it to handle bars
-    console.log(bookData)
+    // console.log(bookData)
     const book = bookData.map((book) => book.get({ plain: true }));
     // Need a helper function to randomize the first 3 books the user will see
     const randomBooks = randomizer(book);
     res.render("homepage", {randomBooks});
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -27,9 +26,9 @@ router.get("/post/:genre", async (req, res) => {
     const bookData = await Book.findAll({
       where: { genre: req.params.genre },
     });
-
     const book = bookData.map((book) => book.get({ plain: true }));
     const randomBooks = randomizer(book);
+    // console.log(randomBooks);
     res.render("homepage", {randomBooks});
   } catch (err) {
     res.status(500).json(err);
