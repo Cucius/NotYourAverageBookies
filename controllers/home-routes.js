@@ -29,7 +29,7 @@ router.get("/post/:genre", async (req, res) => {
 
     const book = bookData.map((book) => book.get({ plain: true }));
     // const randomBooks = randomizer(book);
-    // console.log(randomBooks);
+    // console.log(book);
     res.render("genrepage", { book });
   } catch (err) {
     res.status(500).json(err);
