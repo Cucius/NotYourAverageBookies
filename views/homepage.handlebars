@@ -12,6 +12,7 @@
 <div class="container books">
   <div class="row justify-content-around">
     <div class="col-md-5 col-sm-12">
+      {{! First book recommendation }}
       <div class="card mb-3 align-items-center">
         <img
           src="/images/{{randomBooks.0.genre}}/{{randomBooks.0.coverIMG}}"
@@ -20,6 +21,7 @@
           alt="{{randomBooks.0.description}}"
         />
         <div class="card-body">
+          {{! First book recommendation details }}
           <h5 class="card-title"><i>{{randomBooks.0.title}}</i></h5>
           <p class="card-text"><i>by
               {{randomBooks.0.authorFirstName}}
@@ -32,42 +34,31 @@
           <p id="homeid1" style="display:none">{{randomBooks.0.id}}</p>
         </div>
       </div>
-      <div class="col-4">
-        <div class="row">
-          <div class="col-md-5 col-sm-12">
-            <div class="card" style="width: 100%">
-              <img src="/images/{{randomBooks.[1].genre}}/{{randomBooks.[1].coverIMG}}" class="card-img-top" style="width: 50%" alt="{randomBooks.[1].title}}">
-              <div class="card-body">
-                <h5 class="card-title "><i>{{randomBooks.[1].title}}</i></h5>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i>by {{randomBooks.[1].authorFirstName}} {{randomBooks.[1].authorLastName}}</li></i>
-              </ul>
-              <div class="card-footer">
-                <a class="btn btn-primary btn-outline-light btn-sm" id="homebtn2"><small
-                    class="text-white">add
-                    to myBookies</small>
-                </a>
-                <p id= 'homeid2'style='display:none'></p>{{randomBooks.[1].id}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i>by
+    </div>
+    <div class="col-md-5 col-sm-12">
+      {{! Second book recommendation }}
+      <div class="card mb-3 align-items-center">
+        <img
+          src="/images/{{randomBooks.1.genre}}/{{randomBooks.1.coverIMG}}"
+          class="card-img-top"
+          style="width: 50%"
+          alt="{randomBooks.[1].title}}"
+        />
+        <div class="card-body">
+          {{! Second book recommendation details }}
+          <h5 class="card-title"><i>{{randomBooks.1.title}}</i></h5>
+          <p class="card-text"><i>by
               {{randomBooks.1.authorFirstName}}
-              {{randomBooks.1.authorLastName}}</i></li>
-        </ul>
-        <div class="card-footer">
+              {{randomBooks.1.authorLastName}}</i></p>
           <a
             class="btn btn-primary btn-outline-light btn-sm"
             id="homebtn2"
-          ><small class="text-white">add to myBookies</small>
+          ><small class="text-white">add to myBookies </small>
           </a>
           <p id="homeid2" style="display:none">{{randomBooks.1.id}}</p>
         </div>
       </div>
-
+      {{! Third book recommendation }}
       <div class="card mb-3 align-items-center">
         <img
           src="/images/{{randomBooks.2.genre}}/{{randomBooks.2.coverIMG}}"
@@ -76,23 +67,19 @@
           alt="{{randomBooks.2.Description}}"
         />
         <div class="card-body">
+          {{! Third book recommendation details }}
           <h5 class="card-title"><i>{{randomBooks.2.title}}</i></h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i>by
+          <p class="card-text"><i>by
               {{randomBooks.2.authorFirstName}}
-              {{randomBooks.2.authorLastName}}</i></li>
-        </ul>
-        <div class="card-footer">
+              {{randomBooks.2.authorLastName}}</i></p>
           <a
             class="btn btn-primary btn-outline-light btn-sm"
             id="homebtn3"
-          ><small class="text-white">add to myBookies</small>
+          ><small class="text-white">add to myBookies </small>
           </a>
           <p id="homeid3" style="display:none">{{randomBooks.2.id}}</p>
         </div>
       </div>
-
     </div>
   </div>
 
