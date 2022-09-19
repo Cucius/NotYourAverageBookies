@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      console.log(req.session.loggedIn, "User Creation");
       res.status(200).json(UserData);
     });
   } catch (err) {
@@ -66,7 +66,7 @@ router.post("/logout", (req, res) => {
 // Get home page - main layout
 router.get("/", async (req, res) => {
   try {
-    res.render("loginpage");
+    res.render("loginpage", { loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
