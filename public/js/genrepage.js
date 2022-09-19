@@ -17,27 +17,27 @@ genreid5 = $('#genreid5');
 
 
 // Event handler
-genrebtn1.on('click', function(e){
+genrebtn1.on('click', function (e) {
     e.preventDefault();
-    // console.log(e.target)
+    console.log(e.target)
     console.log(genreid1.text());
 })
-genrebtn2.on('click', function(e){
+genrebtn2.on('click', function (e) {
     e.preventDefault();
     // console.log(e.target)
     console.log(genreid2.text());
 })
-genrebtn3.on('click', function(e){
+genrebtn3.on('click', function (e) {
     e.preventDefault();
     // console.log(e.target)
     console.log(genreid3.text());
 })
-genrebtn4.on('click', function(e){
+genrebtn4.on('click', function (e) {
     e.preventDefault();
     // console.log(e.target)
     console.log(genreid4.text());
 })
-genrebtn5.on('click', function(e){
+genrebtn5.on('click', function (e) {
     e.preventDefault();
     // console.log(e.target)
     console.log(genreid5.text());
