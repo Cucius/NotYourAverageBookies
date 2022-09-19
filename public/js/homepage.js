@@ -7,8 +7,10 @@ homeid1 = $('#homeid1');
 homeid2 = $('#homeid2');
 homeid3 = $('#homeid3');
 
-// Function
+// Function add books to user database that stores their books they have chose
+async function addBooktoUser(){
 
+};
 
 // Event handler
 homebtn1.on('click', function(e){

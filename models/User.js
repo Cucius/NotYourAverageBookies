@@ -27,6 +27,10 @@ User.init(
         len: [6],
       },
     },
+    books: {
+      type: DataTypes.JSON,
+      allowNull: false,
+    },
   },
   {
     hooks: {
