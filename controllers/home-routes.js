@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     console.log("Called route");
     const bookData = await Book.findAll();
     // Serialize data so we can pass it to handle bars
-    console.log(bookData)
+    // console.log(bookData)
     const book = bookData.map((book) => book.get({ plain: true }));
     // Need a helper function to randomize the first 3 books the user will see
     const randomBooks = randomizer(book);
