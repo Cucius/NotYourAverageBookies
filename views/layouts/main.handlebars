@@ -13,17 +13,16 @@
       
     <main>
       {{> navbar}}
-      <section class="container-fluid">
+      <section class="container-fluid" id="content">
         
-      <div class="row flex-nowrap" style="height: 75vh;">
+      <div class="row" style="height: 75vh;">
           <section class="col-sm-12 col-md-2 text-center" style="border: 1px solid black">
-        {{> bookcase}}
-
+           {{> bookcase}}
           </section>
 
       
-          <section class="col-sm-12 col-md-8 text-center fixed-top-center overflow-auto" style="border: 1px solid black; background-color: #74A5B9;">   
-          {{{body}}}
+          <section class="col-sm-12 col-md-8 text-center" style="border: 1px solid black; background-color: #74A5B9;">   
+           {{{body}}}
           </section>
           <section class="col-sm-12 col-md-2 text-center" style="border: 1px solid black">
         {{#if loggedIn}}
