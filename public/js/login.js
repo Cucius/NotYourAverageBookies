@@ -1,33 +1,75 @@
-// Ge element by class
-var loginSubmitBtn = $(".loginbtn");
-var loginUserName = $('input[name="loginUserName"]');
-var loginPassword = $('input[name="loginPassword"]');
-var signupSubmitBtn = $(".signupbtn");
-var signupUserName = $('input[name="signupUserName"]');
-var signupPassword = $('input[name="signupPassword"]');
+const router = require("express").Router();
+const { User } = require("../../models");
 
-// Functions
-async function loginHandler(){
-    console.log("Submit Press")
-    console.log(loginUserName.val());
-    console.log(loginPassword.val());
-}
+// CREATE new user
+router.post("/", async (req, res) => {
+  try {
+    const UserData = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
 
-async function signupHandler(){
-    console.log("Submit Press")
-    console.log(signupUserName.val());
-    console.log(signupPassword.val());
-}
+    req.session.save(() => {
+      req.session.loggedIn = true;
 
-// Event handler
-
-loginSubmitBtn.on("click", function(e){
-    e.preventDefault();
-    loginHandler();
+      res.status(200).json(UserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
-signupSubmitBtn.on("click", function(e){
-    e.preventDefault();
-    signupHandler();
-})
+// Login
+router.post("/login", async (req, res) => {
+  try {
+    const UserData = await User.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
 
+    if (!UserData) {
+      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
+      return;
+    }
+
+    const validPassword = await UserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json({ user: UserData, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+// Get home page - main layout
+router.get("/", async (req, res) => {
+  try {
+    res.render("loginpage");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
