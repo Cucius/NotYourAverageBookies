@@ -9,7 +9,7 @@ Book.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey:true,
+      primaryKey: true,
     },
     title: {
       type: DataTypes.STRING,
@@ -31,6 +31,10 @@ Book.init(
     coverIMG: {
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    Description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
   },
   {
