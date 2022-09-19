@@ -1,41 +1,75 @@
-const loginFormHandler = async (e) => {
-  e.preventDefault();
+const router = require("express").Router();
+const { User } = require("../../models");
 
-  const username = document.querySelector("#usernameLogin").value.trim();
-  const password = document.querySelector("#passwordLogin").value.trim();
-
-  if (username && password) {
-    const response = await fetch("/login", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
+// CREATE new user
+router.post("/", async (req, res) => {
+  try {
+    const UserData = await User.create({
+      username: req.body.username,
+      password: req.body.password,
     });
 
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Failed to log in.");
-    }
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(UserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
-};
+});
 
-const signupFormHandler = async (e) => {
-  e.preventDefault();
-
-  const username = document.querySelector("#usernameSignup").value.trim();
-  const password = document.querySelector("#passwordSignup").value.trim();
-
-  if (username && password) {
-    const response = await fetch("/users", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
+// Login
+router.post("/login", async (req, res) => {
+  try {
+    const UserData = await User.findOne({
+      where: {
+        username: req.body.username,
+      },
     });
 
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Failed to sign up.");
+    if (!UserData) {
+      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
+      return;
     }
+
+    const validPassword = await UserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json({ user: UserData, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
-};
+});
+
+// Logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+// Get home page - main layout
+router.get("/", async (req, res) => {
+  try {
+    res.render("loginpage");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
