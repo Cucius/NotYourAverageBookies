@@ -1,75 +1,45 @@
-const router = require("express").Router();
-const { User } = require("../../models");
+const loginFormHandler = async (e) => {
+  e.preventDefault();
 
-// CREATE new user
-router.post("/", async (req, res) => {
-  try {
-    const UserData = await User.create({
-      username: req.body.username,
-      password: req.body.password,
+  const username = document.querySelector("#usernameLogin").value.trim();
+  const password = document.querySelector("#passwordLogin").value.trim();
+
+  if (username && password) {
+    const response = await fetch("/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
     });
-
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).json(UserData);
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// Login
-router.post("/login", async (req, res) => {
-  try {
-    const UserData = await User.findOne({
-      where: {
-        username: req.body.username,
-      },
-    });
-
-    if (!UserData) {
-      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
-      return;
+    console.log("Logged In");
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to log in.");
     }
+  }
+};
 
-    const validPassword = await UserData.checkPassword(req.body.password);
+const signupFormHandler = async (e) => {
+  e.preventDefault();
 
-    if (!validPassword) {
-      res.status(400).json({ message: "Incorrect username or password. Please try again!" });
-      return;
+  const username = document.querySelector("#usernameSetupLogin").value.trim();
+  const password = document.querySelector("#passwordSetupLogin").value.trim();
+
+  if (username && password) {
+    const response = await fetch("/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log("Signed Up");
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to sign up.");
     }
-
-    req.session.save(() => {
-      req.session.loggedIn = true;
-
-      res.status(200).json({ user: UserData, message: "You are now logged in!" });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
   }
-});
+};
 
-// Logout
-router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+document.querySelector(".loginForm").addEventListener("submit", loginFormHandler);
 
-// Get home page - main layout
-router.get("/", async (req, res) => {
-  try {
-    res.render("loginpage");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-module.exports = router;
+document.querySelector(".signupForm").addEventListener("submit", signupFormHandler);

@@ -1,12 +1,23 @@
-<form>
+<form class="form loginForm">
   <div class="mb-3">
     <label for="usernameLogin" class="form-label">Username:</label>
     <input type="text" class="form-control" id="usernameLogin" aria-describedby="emailHelp">
-    <div id="usernameHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="passwordLogin" class="form-label">Password</label>
     <input type="password" class="form-control" id="passwordLogin">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<form class="signupForm">
+  <div class="mb-3">
+    <label for="usernameSetupLogin" class="form-label">Username:</label>
+    <input type="text" class="form-control" id="usernameSetupLogin" aria-describedby="usernameSetupHelp">
+    </div>
+  <div class="mb-3">
+    <label for="passwordSetupLogin" class="form-label">Password</label>
+    <input type="password" class="form-control" id="passwordSetupLogin">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

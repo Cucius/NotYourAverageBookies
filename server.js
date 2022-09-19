@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const sess = {
-  secret: "Super secret secret",
+  secret: "MyBookiesKey",
   cookie: {},
   resave: false,
   saveUninitialized: true,
