@@ -10,7 +10,7 @@ const loginFormHandler = async (e) => {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log("Logged In");
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -22,16 +22,16 @@ const loginFormHandler = async (e) => {
 const signupFormHandler = async (e) => {
   e.preventDefault();
 
-  const username = document.querySelector("#usernameSignup").value.trim();
-  const password = document.querySelector("#passwordSignup").value.trim();
+  const username = document.querySelector("#usernameSetupLogin").value.trim();
+  const password = document.querySelector("#passwordSetupLogin").value.trim();
 
   if (username && password) {
-    const response = await fetch("/users", {
+    const response = await fetch("/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log("Signed Up");
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -40,6 +40,6 @@ const signupFormHandler = async (e) => {
   }
 };
 
-document.querySelector(".loginForm").addEventListener("Login", loginFormHandler);
+document.querySelector(".loginForm").addEventListener("submit", loginFormHandler);
 
-document.querySelector(".signupForm").addEventListener("Submit", signupFormHandler);
+document.querySelector(".signupForm").addEventListener("submit", signupFormHandler);
