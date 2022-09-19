@@ -1,10 +1,12 @@
 * {
   box-sizing: border-box;
-  font-family:'Cormorant Garamond', serif, 'Noto Serif Display', serif,'Poppins', sans-serif;
+  font-family: "Cormorant Garamond", serif, "Noto Serif Display", serif,
+    "Poppins", sans-serif;
+  border: solid 1px black;
 }
 
 body {
-  background-color: #74A5B9;
+  background-color: #b97474;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -15,7 +17,7 @@ body {
 header {
   padding: 40px;
   text-align: center;
-  background: #74A5B9;
+  background: #74a5b9;
   color: #ffffff;
 }
 .vertical-text {
@@ -45,10 +47,9 @@ nav {
   color: #005c87;
 }
 
-main {
+/* main {
   /* display: flex; */
-  /* flex-wrap: wrap; */
-}
+/* flex-wrap: wrap; } */
 
 .products {
   border-style: solid;
@@ -60,15 +61,15 @@ section {
 }
 
 img {
-  width: 100%;
+  width: 25%;
 }
 
 h2 {
-  color: #EBF4F7;
+  color: #ebf4f7;
 }
 .card {
-  border: 15px solid #D2D9DD;
-  background-color: #EBF4F7;
+  border: 15px solid #d2d9dd;
+  background-color: #ebf4f7;
 }
 footer {
   flex-shrink: 0;
@@ -102,7 +103,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  main,
+  .content {
+    width: 100%;
+  }
   nav {
     flex-direction: column;
   }
