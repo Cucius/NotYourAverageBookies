@@ -11,5 +11,6 @@ USE NotYourAverageBookies;
 -- authorFirstName VARCHAR(50),   
 -- authorLastName VARCHAR(50),   
 -- genre VARCHAR(25),
--- coverIMG TEXT
+-- coverIMG TEXT,
+-- Description TEXT
 -- );
