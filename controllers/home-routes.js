@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     const book = bookData.map((book) => book.get({ plain: true }));
     // Need a helper function to randomize the first 3 books the user will see
     const randomBooks = randomizer(book);
-    res.render("homepage", { randomBooks });
+    res.render("homepage", { randomBooks, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,7 +30,7 @@ router.get("/post/:genre", async (req, res) => {
     const book = bookData.map((book) => book.get({ plain: true }));
     // const randomBooks = randomizer(book);
     // console.log(book);
-    res.render("genrepage", { book });
+    res.render("genrepage", { book, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
