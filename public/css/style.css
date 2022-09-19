@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Cormorant Garamond", serif, "Noto Serif Display", serif,
-    "Poppins", sans-serif;
-  border: solid 1px black;
+  font-family: "Cormorant Garamond", serif, "Noto Serif Display", serif, "Poppins", sans-serif;
 }
 
 body {
@@ -109,5 +107,9 @@ footer {
   }
   nav {
     flex-direction: column;
+  }
+
+  #mainWindow {
+    flex-wrap: wrap !important;
   }
 }
