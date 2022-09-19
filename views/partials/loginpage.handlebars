@@ -1,12 +1,24 @@
 <form>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <h2>Login</h2>
+    <label for="userNameInput" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="userNameInput" name="loginUserName">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="loginInputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="loginInputPassword" name="loginPassword">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary loginbtn">Submit</button>
+</form>
+<form class="p-5">
+  <div class="mb-3">
+    <h2>Sign Up</h2>
+    <label for="signupUserNameInput" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="signupUserNameInput" name="signupUserName">
+  </div>
+  <div class="mb-3">
+    <label for="signupPasswordInput" class="form-label">Password</label>
+    <input type="password" class="form-control" id="signupPasswordInput" name="signupPassword">
+  </div>
+  <button type="click" class="btn btn-primary signupbtn">Submit</button>
 </form>
