@@ -44,22 +44,30 @@ router.post("/book/", async (req, res) => {
       where: {username: req.body.name},
       defaults: {username: req.body.name, books: [req.body.id]},
     });
-    // // Find the users 
+    // // // Find the users 
     const user = await BookList.findOne({where: {username: req.body.name}});
-    // Get current books for user
-    console.log(user.books)
+    // // Get current books for user
+    // console.log(user.books)
     const newArray = [...user.books]
-    // Push new books into array
+    // // Push new books into array
     newArray.push(req.body.id);
-    // Filter array to be all unique
-    const finalArray = new Set(newArray);
-    console.log(finalArray)
+    // console.log(newArray);
+    // // Filter array to be all unique
+    const finalArray = [...new Set(newArray)];
+    // console.log(finalArray)
     // Set the new books
     user.set({
       books:finalArray
     })
     user = await user.save();
-    console.log(user.book1)
+    // console.log(user.book1)
+
+    // Query books by id
+    const bookData = await Book.findAll({
+      where: { genre: 'biography'  },
+    });
+    const book = bookData.map((book) => book.get({ plain: true }));
+    console.log(book)
 
     res.status(200).json(data)
     // res.render("genrepage", { book, loggedIn: req.session.loggedIn });

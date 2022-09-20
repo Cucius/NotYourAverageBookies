@@ -10,7 +10,7 @@ homeid2 = $('#homeid2');
 homeid3 = $('#homeid3');
 
 // Function add books to user database that stores their books they have chose
-async function addBooktoUser(id, booknum){
+async function addBooktoUser(id){
     // let query the db 
     const name = window.sessionStorage.getItem('username')
     console.log(name);
