@@ -3,7 +3,7 @@ const logout = async () => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
   });
-
+  sessionStorage.clear(); // Clear session storage
   if (response.ok) {
     document.location.replace("/");
     console.log("logged out");
