@@ -105,9 +105,6 @@ footer {
   .content {
     width: 100%;
   }
-  nav {
-    flex-direction: column;
-  }
 
   #mainWindow {
     flex-wrap: wrap !important;
