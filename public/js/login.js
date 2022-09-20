@@ -5,6 +5,7 @@ const loginFormHandler = async (e) => {
   const password = document.querySelector("#passwordLogin").value.trim();
 
   if (username && password) {
+    window.sessionStorage.setItem('username', JSON.stringify(username)); // story username after login
     const response = await fetch("/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
@@ -26,6 +27,7 @@ const signupFormHandler = async (e) => {
   const password = document.querySelector("#passwordSetupLogin").value.trim();
 
   if (username && password) {
+    window.sessionStorage.setItem('username', JSON.stringify(username));
     const response = await fetch("/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),

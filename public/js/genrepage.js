@@ -13,7 +13,7 @@ genreid4 = $('#genreid4');
 genreid5 = $('#genreid5');
 
 
-// Function
+// Function - add books to user database that stores their books they have choose
 
 
 // Event handler
