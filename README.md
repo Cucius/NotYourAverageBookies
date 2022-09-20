@@ -6,12 +6,11 @@ We designed a website for all the readers of the world to spend less time search
 
 Overall, this project allows a user to login, so they can use the complete functionality of the website, and browse without signing in. Once a user logs in, we then grant them the ability to create a personal reading list. We added the layer of security to prevent malicious use of the website. Furthermore, the website offers recommendations of books to read and allows the user to browse based off genres.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
 
 ## Installation
 
@@ -26,7 +25,7 @@ OR
 - Visit the live site
 - Copy the files from the developer tools into your own files
 - [Link](https://github.com/myang5t3r/NotYourAverageBookies) to GitHub repository.
-- [Link](NEED LINK) to deployed application.
+- [Link](https://desolate-inlet-39798.herokuapp.com/) to deployed application.
 
 ## Usage
 
@@ -38,9 +37,9 @@ A user can access the site without logging in, but they get more from the websit
 - Cover image
 - Description
 
-![Screenshot of home page](./public/images/screenshots/Screen%20Shot%202022-09-19%20at%204.22.39%20PM.png)
-![Screenshot of home page](./public/images/screenshots/Screen%20Shot%202022-09-19%20at%204.23.32%20PM.png)
-![Screenshot of home page](./public/images/screenshots/Screen%20Shot%202022-09-19%20at%204.24.35%20PM.png)
+![Screenshot of home page as it appears for a non logged in user](./public/images/screenshots/Screen%20Shot%202022-09-20%20at%208.58.41%20AM.png)
+![Screenshot of home page as it appears after you login](./public/images/screenshots/Screen%20Shot%202022-09-20%20at%208.58.54%20AM.png)
+![Screenshot of a genre page and the myBookies list](./public/images/screenshots/Screen%20Shot%202022-09-20%20at%208.59.02%20AM.png)
 
 ## Credits
 
