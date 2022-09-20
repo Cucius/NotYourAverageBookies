@@ -2,7 +2,6 @@
   box-sizing: border-box;
   font-family: "Cormorant Garamond", serif, "Noto Serif Display", serif, "Poppins", sans-serif;
 }
-
 body {
   background-color: #b97474;
   margin: 0;
@@ -16,7 +15,12 @@ header {
   padding: 40px;
   text-align: center;
   background: #74a5b9;
-  color: #ffffff;
+  color: #b97474;
+}
+nav {
+  display: flex;
+  background-color: #f5f8f8;
+  color: #005c87;
 }
 .vertical-text {
   writing-mode: vertical-rl;
@@ -39,32 +43,22 @@ header {
   width: 600px;
   margin: 5px;
 }
-nav {
-  display: flex;
-  background-color: #f5f8f8;
-  color: #005c87;
-}
-
-/* main {
-  /* display: flex; */
-
-/* flex-wrap: wrap; } */
 
 .products {
   border-style: solid;
 }
 section {
-  /* flex: 0 0 400px; */
-  background-color: #fff;
+  background-color: #b97474;
   padding: 20px;
 }
 
-img {
-  width: 25%;
-}
+/* 
 
 h2 {
   color: #ebf4f7;
+}
+img {
+  width: 25%;
 }
 .card {
   border: 15px solid #d2d9dd;
@@ -80,26 +74,26 @@ footer {
 }
 
 /* Added some padding and styling for the photos */
-.photo {
+/* .photo {
   padding: 20px 10px;
   border: 2px solid #bfbfbf;
   background-color: #fff;
-}
+} */
 
 /* We can use rotate to rotate the photo to the left or right */
-.rotate {
+/* .rotate {
   transform: rotate(7deg);
-}
+} */
 
 /* We can use scale to stretch the photo vertically or horizontally */
-.scale {
+/* .scale {
   transform: scale(1.5, 1);
-}
+} */
 
 /* We can use skew to skew the photo to the left or right */
-.skew {
+/* .skew {
   transform: skew(15deg);
-}
+}  */
 
 @media screen and (max-width: 768px) {
   .content {
