@@ -18,7 +18,20 @@ async function addBooktoUser(id){
         method: "POST",
         body: JSON.stringify({name, id}),
         headers: { "Content-Type": "application/json" }
-    })
+    });
+    // console.log(response);
+    if(response.ok){
+        console.log(response)
+    }
+    const popBooks = await fetch('/bookcase/',{
+        method: "POST",
+        body: JSON.stringify({name}),
+        headers: { "Content-Type": "application/json" }
+    });
+    if(response.ok){
+        console.log(popBooks);
+    }
+
 };
 
 // Event handler
