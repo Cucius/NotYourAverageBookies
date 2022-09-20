@@ -62,14 +62,14 @@ router.post("/book/", async (req, res) => {
     user = await user.save();
     // console.log(user.book1)
 
-    // Query books by id
-    const bookData = await Book.findAll({
-      where: { genre: 'biography'  },
-    });
-    const book = bookData.map((book) => book.get({ plain: true }));
-    console.log(book)
+    // // Query books by id
+    // const bookData = await Book.findAll({
+    //   where: { genre: 'biography'  },
+    // });
+    // const book = bookData.map((book) => book.get({ plain: true }));
+    // console.log(book)
 
-    res.status(200).json(data)
+    res.status(200).json("home route got here")
     // res.render("genrepage", { book, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
